@@ -1,0 +1,37 @@
+.ui.grid.navbar {
+  padding: 1rem 1.5rem;
+}
+
+.logo {
+  height: 45px;
+}
+
+.ui.icon.input {
+  width: 100%;
+}
+
+.ui.button.sign-in {
+  background-color: #1ab188;
+  color: #ffffff;
+}
+
+.ui.button.sign-in:hover {
+  background-color: #1ab188;
+  opacity: 0.8;
+  color: #ffffff;
+
+  transition: all 200ms ease-in-out;
+}
+
+.ui.button.create-account {
+  background-color: #4a585c;
+  color: #a0b3b0;
+}
+
+.ui.button.create-account:hover {
+  background-color: #1ab188;
+  opacity: 0.8;
+  color: #ffffff;
+
+  transition: all 200ms ease-in-out;
+}
