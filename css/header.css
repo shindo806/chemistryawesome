@@ -4,10 +4,21 @@
 
 .logo {
   height: 45px;
+  margin: 0 auto;
 }
 
 .ui.icon.input {
   width: 100%;
+}
+
+.ui.icon.input>input {
+  background-color: #f3f3f3;
+  border: none;
+  outline: none;
+}
+
+.ui.icon.input>input::placeholder {
+  color: #5b5b5b;
 }
 
 .ui.button.sign-in {
