@@ -1,5 +1,6 @@
 .ui.grid.navbar {
   padding: 1rem 1.5rem;
+  box-shadow: 0px 4px 10px #f3f3f3;
 }
 
 .logo {
@@ -11,13 +12,13 @@
   width: 100%;
 }
 
-.ui.icon.input>input {
+.ui.icon.input > input {
   background-color: #f3f3f3;
   border: none;
   outline: none;
 }
 
-.ui.icon.input>input::placeholder {
+.ui.icon.input > input::placeholder {
   color: #5b5b5b;
 }
 
