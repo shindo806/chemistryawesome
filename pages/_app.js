@@ -3,9 +3,17 @@ import 'semantic-ui-css/semantic.min.css';
 // import Layout from '../components/Layout';
 import '../css/style.css';
 import '../css/header.css';
+import '../css/sidebar.css';
 
-export default function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+
+export default function MyApp({
+  Component,
+  pageProps
+}) {
+  return <Component {
+    ...pageProps
+  }
+  />;
 }
 
 // MyApp.getInitialProps = async (appContext) => {

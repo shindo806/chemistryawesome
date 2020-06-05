@@ -1,0 +1,110 @@
+{
+  "data": [
+    {
+      "category": "tài liệu tự học",
+      "tag": "tailieutuhoc",
+      "links": [
+        {
+          "name": "hóa học 8",
+          "url": "/hoahoc8",
+          "childrens": [
+            {
+              "name": "học kì 1",
+              "url": "/hoahoc8/hocki1"
+            },
+            {
+              "name": "học kì 2",
+              "url": "/hoahoc8/hocki2"
+            }
+          ]
+        },
+        {
+          "name": "hóa học 9",
+          "url": "/hoahoc9",
+          "childrens": [
+            {
+              "name": "học kì 1",
+              "url": "/hoahoc9/hocki1"
+            },
+            {
+              "name": "học kì 2",
+              "url": "/hoahoc9/hocki2"
+            }
+          ]
+        },
+        {
+          "name": "hóa học 10",
+          "url": "/hoahoc10",
+          "childrens": [
+            {
+              "name": "học kì 1",
+              "url": "/hoahoc10/hocki1"
+            },
+            {
+              "name": "học kì 2",
+              "url": "/hoahoc10/hocki2"
+            }
+          ]
+        },
+        {
+          "name": "hóa học 11",
+          "url": "/hoahoc11",
+          "childrens": [
+            {
+              "name": "học kì 1",
+              "url": "/hoahoc11/hocki1"
+            },
+            {
+              "name": "học kì 2",
+              "url": "/hoahoc11/hocki2"
+            }
+          ]
+        },
+        {
+          "name": "hóa học 12",
+          "url": "/hoahoc12",
+          "childrens": [
+            {
+              "name": "học kì 1",
+              "url": "/hoahoc12/hocki1"
+            },
+            {
+              "name": "học kì 2",
+              "url": "/hoahoc12/hocki2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "luyện thi đại học",
+      "tag": "luyenthidaihoc",
+      "links": [
+        {
+          "name": "đề thi thử 2020",
+          "url": "/thithu2020"
+        }
+      ]
+    },
+    {
+      "category": "đề ôn tập",
+      "tag": "deontap",
+      "links": [
+        {
+          "name": "hóa học 8",
+          "url": "/hoahoc8/dekiemtra",
+          "childrens": [
+            {
+              "name": "học kì 1",
+              "url": "/hoahoc8/dekiemtra/hocki1"
+            },
+            {
+              "name": "học kì 2",
+              "url": "/hoahoc8/dekiemtra/hocki2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
