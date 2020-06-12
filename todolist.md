@@ -2,6 +2,6 @@
 
 - Change the color of sign-in/create account to darker version
 
-* Current working: create menu link (sidebar.js)
-  -- change from hover to expand -> click to expand the
-  sub menu
+* Current working: fetch data
+  -> google drive API
+  -> build backend API: hoahoc8, hoahoc9, ...
