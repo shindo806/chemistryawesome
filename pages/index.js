@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import fetch from 'isomorphic-unfetch';
 
 import { Grid } from 'semantic-ui-react';
@@ -7,11 +8,13 @@ import SidebarComponent from '../components/Sidebar';
 import MainWindow from '../components/Mainwindow';
 
 export default function Home(props) {
-  const { data } = props;
-  const responseData = data.data;
-
+  // const { data } = props.data;
+  console.log(props);
   return (
     <>
+      <Head>
+        <script defer src='https://apis.google.com/js/api.js'></script>
+      </Head>
       {/* Header */} <Navbar /> {/* Main */}
       <Grid>
         <Grid.Column width={3} className='sidebar'>
@@ -19,15 +22,25 @@ export default function Home(props) {
         </Grid.Column>
         <Grid.Column width={13} className='main-container'>
           {/* Main data come here */}
-          <MainWindow data={responseData} />
+          {/* <MainWindow data={data} /> */}
         </Grid.Column>
       </Grid>
     </>
   );
 }
 
+// Home.getInitialProps = async () => {
+//   const response = await fetch('http://localhost:3000/api/post');
+//   const data = await response.json();
+
+//   return {
+//     props: { data: data }, // will be passed to the page component as props
+//   };
+// };
+
 export async function getStaticProps(context) {
-  const data = await (await fetch('http://localhost:3000/api/post')).json();
+  const response = await fetch('http://localhost:3000/api/post');
+  const data = await response.json();
 
   return {
     props: { data: data }, // will be passed to the page component as props

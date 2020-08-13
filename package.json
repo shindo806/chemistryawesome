@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "node ./server/ssr-server.js",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
     "async": "^3.2.0",
+    "express": "^4.17.1",
     "googleapis": "39",
     "isomorphic-unfetch": "^3.0.0",
     "next": "9.4.4",

@@ -1,12 +1,13 @@
-import { Table } from 'semantic-ui-react';
+// import { Table } from 'semantic-ui-react';
 import { useState } from 'react';
 import Semaster from './Semaster';
 import Chapter from './Chapter';
 import Powerpoint from './Powerpoint';
 
-const MainWindow = (props) => {
+const MainWindow = ({ ...props }) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const { data } = props;
+  // const { data } = props;
+  console.log('data mainwindow', props);
   // const renderLink = (
   //   <iframe
   //     src='https://drive.google.com/file/d/1sNH4Pu8F-L9FcQKxAn96IatNr_rrx8Fn/preview'

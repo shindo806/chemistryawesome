@@ -1,4 +1,6 @@
-import { getAllFile } from '../../API/connectDB';
+import {
+  getAllFile
+} from '../../API/connectDB';
 
 export default async (req, res) => {
   ///api/post?q=shindo
@@ -9,9 +11,8 @@ export default async (req, res) => {
   // console.log('data from post route', data)
 
   const data = await getAllFile();
-
   res.statusCode = 200;
-  res.json({
+  res.send({
     data,
   });
 };

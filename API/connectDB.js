@@ -2,7 +2,9 @@ import nonAccentVietnamese from '../utils/nonacentVietnamese';
 
 const fs = require('fs');
 const readline = require('readline');
-const { google } = require('googleapis');
+const {
+  google
+} = require('googleapis');
 const async = require('async');
 
 // If modifying these scopes, delete token.json.
@@ -11,13 +13,6 @@ const SCOPES = ['https://www.googleapis.com/auth/drive.metadata.readonly'];
 // created automatically when the authorization flow completes for the first
 // time.
 const TOKEN_PATH = 'token.json';
-
-// Load client secrets from a local file.
-// fs.readFile('client_id.json', (err, content) => {
-//   if (err) return console.log('Error loading client secret file:', err);
-//   // Authorize a client with credentials, then call the Google Drive API.
-//   authorize(JSON.parse(content), listFiles);
-// });
 
 /**
  * Create an OAuth2 client with the given credentials, and then execute the
@@ -86,15 +81,7 @@ async function listFiles(auth) {
     version: 'v3',
     auth,
   });
-  // drive.files.list(
-  //   {
-  //     q: "mimeType ='application/pdf'",
-  //     fields: 'nextPageToken, files(id, name, webContentLink, webViewLink)',
-  //   },
-  //   (err, res) => {
-  //     handleResponse(err, res);
-  //   }
-  // );
+
   return drive.files
     .list({
       q: "mimeType ='application/pdf'",
@@ -103,49 +90,12 @@ async function listFiles(auth) {
     .then((data) => data.data.files);
 }
 
-// const handleResponse = async (err, res) => {
-//   if (err) return console.log('The API returned an error: ' + err);
-//   const files = res.data.files;
-//   if (files.length) {
-//     console.log(files);
-//     return files;
-//   } else {
-//     console.log('No files found.');
-//   }
-// };
-
 export async function getAllFile() {
   const auth = authorize();
   const data = await listFiles(auth);
 
   return data;
 }
-
-// function getFileById(auth, fileId) {
-//   const drive = google.drive({
-//     version: 'v3',
-//     auth,
-//   });
-//   drive.files.get(
-//     {
-//       fileId: fileId,
-//       fields: 'id, name, webContentLink, webViewLink',
-//     },
-//     (err, res) => {
-//       if (err) return console.log('The API returned an error: ' + err);
-//       console.log(res.data);
-//     }
-//   );
-// }
-
-// export function requestFileById(fileId) {
-//   // Load client secrets from a local file.
-//   fs.readFile('client_id.json', (err, content) => {
-//     if (err) return console.log('Error loading client secret file:', err);
-//     // Authorize a client with credentials, then call the Google Drive API.
-//     customAuthorize(JSON.parse(content), getFileById, fileId);
-//   });
-// }
 
 function getFileByName(auth, fileName) {
   const data = [];
@@ -157,8 +107,7 @@ function getFileByName(auth, fileName) {
   // Using the NPM module 'async'
   async.doWhilst(
     function () {
-      drive.files.list(
-        {
+      drive.files.list({
           q: "mimeType != 'application/vnd.google-apps.folder'",
           fields: 'nextPageToken, files(id, name, webContentLink, webViewLink)',
           spaces: 'drive',
