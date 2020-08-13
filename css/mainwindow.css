@@ -1,0 +1,113 @@
+.main-window-wrapper {
+  display: block;
+  width: 96%;
+  height: 100%;
+  border-radius: 10px;
+
+  padding: 1rem;
+  background-color: #f4f4fb;
+}
+
+/*  Tab styles */
+.tabbed {
+  margin: 1rem auto 0rem;
+
+  overflow: hidden;
+  transition: border 250ms ease;
+  user-select: none;
+}
+
+.tabbed ul {
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  float: left;
+
+  list-style-type: none;
+}
+
+.tabbed ul * {
+  margin: 0px;
+  padding: 0px;
+}
+
+.tabbed ul li {
+  display: block;
+  float: left;
+  padding: 10px 24px 8px;
+  background-color: #f8f8fe;
+  margin-right: 46px;
+  z-index: 2;
+  position: relative;
+  cursor: pointer;
+
+  font-weight: 600;
+  color: #8f8cae;
+  text-transform: uppercase;
+
+  transition: all 250ms ease;
+}
+
+.tabbed ul li:before,
+.tabbed ul li:after {
+  display: block;
+  content: ' ';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 44px;
+  background-color: #f8f8fe;
+  transition: all 250ms ease;
+}
+
+.tabbed ul li:before {
+  right: -24px;
+  transform: skew(30deg, 0deg);
+  box-shadow: rgba(0, 0, 0, 0.1) 3px 2px 5px,
+    inset rgba(255, 255, 255, 0.09) -1px 0;
+}
+
+.tabbed ul li:after {
+  left: -24px;
+  transform: skew(0deg, 0deg);
+  box-shadow: rgba(0, 0, 0, 0.1) -3px 2px 5px,
+    inset rgba(255, 255, 255, 0.09) 1px 0;
+}
+
+.tabbed ul li:hover,
+.tabbed ul li:hover:before,
+.tabbed ul li:hover:after {
+  background-color: #ffffff;
+  color: #1db189;
+}
+
+.tabbed ul li.active {
+  z-index: 3;
+}
+
+.tabbed ul li.active,
+.tabbed ul li.active:before,
+.tabbed ul li.active:after {
+  background-color: #ffffff;
+  color: #1db189;
+}
+
+/* Round Tabs */
+.tabbed.round ul li {
+  border-radius: 8px 8px 0 0;
+}
+
+.tabbed.round ul li:before {
+  border-radius: 8px 8px 0 0;
+}
+
+.tabbed.round ul li:after {
+  border-radius: 8px 0 0 0;
+}
+
+/* Data panel styles */
+.data-panel {
+  background-color: #ffffff;
+  height: 90%;
+  padding-top: 1rem;
+}

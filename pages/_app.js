@@ -4,7 +4,9 @@ import 'semantic-ui-css/semantic.min.css';
 import '../css/style.css';
 import '../css/header.css';
 import '../css/sidebar.css';
-
+import '../css/mainwindow.css';
+import '../css/table.css';
+import '../css/chapter.css';
 
 export default function MyApp({
   Component,
