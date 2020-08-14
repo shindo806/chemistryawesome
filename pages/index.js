@@ -9,7 +9,7 @@ import MainWindow from '../components/Mainwindow';
 
 export default function Home(props) {
   // const { data } = props.data;
-  // console.log(props);
+  console.log(props);
   return (
     <>
       <Head>
@@ -47,10 +47,10 @@ export default function Home(props) {
 //   };
 // }
 
-// export async function getServerSideProps(context) {
-//   const res = await fetch('http://localhost:3000/api/post');
-//   const data = await res.json();
-//   return {
-//     props: { data }, // will be passed to the page component as props
-//   };
-// }
+export async function getServerSideProps(context) {
+  const res = await fetch('http://localhost:3000/api/post');
+  const data = await res.json();
+  return {
+    props: { data }, // will be passed to the page component as props
+  };
+}
