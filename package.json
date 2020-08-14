@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nodemon ./server/ssr-server.js",
-    "build": "next build",
+    "build": "NODE_ENV=production next build",
     "start": "yarn build && next start"
   },
   "dependencies": {

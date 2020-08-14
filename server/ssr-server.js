@@ -1,5 +1,6 @@
 const express = require('express');
 const next = require('next');
+const fetch = require('isomorphic-unfetch');
 
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
@@ -11,7 +12,9 @@ const handle = app.getRequestHandler();
 app.prepare().then(() => {
   const server = express();
 
-  server.get('/', (req, res) => {
+  server.get('/', async (req, res) => {
+    const data = await (await fetch('http://localhost:3000/api/post')).json();
+    res.data = data;
     return app.render(req, res, '/index', req.query);
   });
 
