@@ -38,11 +38,19 @@ export default function Home(props) {
 //   };
 // };
 
-export async function getStaticProps(context) {
-  // const response = await fetch('/api/post');
-  // const data = await response.json();
+// export async function getStaticProps(context) {
+//   const response = await fetch('/api/post');
+//   // const data = await response.json();
 
+//   return {
+//     props: { data: 'shindo' }, // will be passed to the page component as props
+//   };
+// }
+
+export async function getServerSideProps(context) {
+  const res = await fetch('http://localhost:3000/api/post');
+  const data = await res.json();
   return {
-    props: { data: 'shindo' }, // will be passed to the page component as props
+    props: { data }, // will be passed to the page component as props
   };
 }
