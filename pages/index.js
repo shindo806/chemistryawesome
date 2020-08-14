@@ -22,7 +22,7 @@ export default function Home(props) {
         </Grid.Column>
         <Grid.Column width={13} className='main-container'>
           {/* Main data come here */}
-          {/* <MainWindow data={data} /> */}
+          <MainWindow />
         </Grid.Column>
       </Grid>
     </>
