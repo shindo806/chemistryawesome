@@ -2,11 +2,10 @@
   "name": "chemistryawesome",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3000",
   "scripts": {
     "dev": "nodemon ./server/ssr-server.js",
     "build": "next build",
-    "start": "next start"
+    "start": "yarn build && next start"
   },
   "dependencies": {
     "async": "^3.2.0",
