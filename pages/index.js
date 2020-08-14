@@ -39,10 +39,10 @@ export default function Home(props) {
 // };
 
 export async function getStaticProps(context) {
-  const response = await fetch('http://localhost:3000/api/post');
-  const data = await response.json();
+  // const response = await fetch('/api/post');
+  // const data = await response.json();
 
   return {
-    props: { data: data }, // will be passed to the page component as props
+    props: { data: 'shindo' }, // will be passed to the page component as props
   };
 }
