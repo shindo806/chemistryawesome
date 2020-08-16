@@ -6,7 +6,6 @@ import SidebarComponent from '../components/Sidebar';
 import MainWindow from '../components/Mainwindow';
 
 export default function Chemgrade({ data, params }) {
-  console.log(params);
   return (
     <>
       {' '}
@@ -23,7 +22,7 @@ export default function Chemgrade({ data, params }) {
   );
 }
 
-// Provide dynamic paths then use getStatisProps to fetch data
+// Provide dynamic paths then use getStaticProps to fetch data
 export async function getStaticPaths() {
   return {
     paths: [
@@ -43,11 +42,11 @@ export async function getStaticPaths() {
         },
       },
     ],
-    fallback: true, // See the "fallback" section below
+    fallback: false, // See the "fallback" section below
   };
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const params = context.params;
   const { chemgrade } = context.params;
   const res = await fetch(
