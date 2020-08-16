@@ -47,7 +47,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const params = context.params;
   const { chemgrade } = context.params;
   const res = await fetch(
