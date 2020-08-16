@@ -13,9 +13,14 @@ function MenuLink(props) {
   const [subMenuActive, setSubMenuActive] = useState(-1);
 
   useEffect(() => {
-    setActiveUrl(props.params.chemgrade);
-    const subMenuLink = `${props.params.chemgrade}/${props.params.semester}`;
-    setSubMenuActive(subMenuLink);
+    console.log(props);
+    if (props.params) {
+      setActiveUrl(props.params.chemgrade);
+      if (props.params.semester) {
+        const subMenuLink = `${props.params.chemgrade}/${props.params.semester}`;
+        setSubMenuActive(subMenuLink);
+      }
+    }
   }, []);
 
   const handleClick = (e, url) => {

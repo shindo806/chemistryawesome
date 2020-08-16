@@ -227,12 +227,16 @@ td {
 }
 
 /* Filetype Logo */
-.filetype-logo svg {
+.filetype-logo {
+  cursor: pointer;
+}
+
+.filetype-logo>svg {
   opacity: 0.8;
   width: 25px;
 }
 
-.filetype-logo svg:hover {
+.filetype-logo>svg:hover {
   opacity: 1;
   transform: translateY(-5px);
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);

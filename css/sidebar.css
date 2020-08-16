@@ -118,6 +118,12 @@
   font-weight: bold;
 }
 
+.submenu-highlight:hover {
+  background-color: #1ab188 !important;
+  color: #ffffff !important;
+  transition: all 200ms ease-in-out;
+}
+
 /* SVG icon */
 .link-icon {
   height: 25px;

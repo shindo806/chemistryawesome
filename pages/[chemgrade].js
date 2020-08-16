@@ -48,15 +48,17 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const params = context.params;
-  const { chemgrade } = context.params;
-  const res = await fetch(
-    `https://evening-harbor-03068.herokuapp.com/${chemgrade}`
-  );
-  const data = await res.json();
-  return {
-    props: {
-      data,
-      params,
-    }, // will be passed to the page component as props
-  };
+  const chemgrade = context.params.chemgrade ? context.params.chemgrade : null;
+  if (chemgrade) {
+    const res = await fetch(
+      `https://evening-harbor-03068.herokuapp.com/${chemgrade}`
+    );
+    const data = await res.json();
+    return {
+      props: {
+        data,
+        params,
+      }, // will be passed to the page component as props
+    };
+  }
 }
