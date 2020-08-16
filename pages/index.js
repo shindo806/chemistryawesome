@@ -1,55 +1,51 @@
-import Head from 'next/head';
+import { useState, useEffect } from 'react';
 import fetch from 'isomorphic-unfetch';
-
 import { Grid } from 'semantic-ui-react';
 
 import Navbar from '../components/Navbar';
 import SidebarComponent from '../components/Sidebar';
 import MainWindow from '../components/Mainwindow';
+import WelcomeWindow from '../components/WelcomeWindow';
 
-export default function Home(props) {
-  // const { data } = props.data;
-  console.log(props);
+export default function Home({ ...props }) {
+  const [data, setData] = useState(props.data);
+  const [currentPage, setCurrentPage] = useState('home');
+
+  useEffect(() => {
+    async function fetchPageData() {
+      console.log('fetch data...');
+      const res = await fetch(
+        `https://evening-harbor-03068.herokuapp.com/${currentPage}`
+      );
+      let data = await res.json();
+      setData(data);
+    }
+
+    fetchPageData();
+  }, [currentPage]);
   return (
     <>
-      <Head>
-        <script defer src='https://apis.google.com/js/api.js'></script>
-      </Head>
       {/* Header */} <Navbar /> {/* Main */}
       <Grid>
         <Grid.Column width={3} className='sidebar'>
-          <SidebarComponent />
+          <SidebarComponent setCurrentPage={setCurrentPage} />
         </Grid.Column>
         <Grid.Column width={13} className='main-container'>
-          {/* Main data come here */}
-          <MainWindow />
+          {currentPage === 'home' ? (
+            <WelcomeWindow data={data} />
+          ) : (
+            <MainWindow />
+          )}
         </Grid.Column>
       </Grid>
     </>
   );
 }
 
-// Home.getInitialProps = async () => {
-//   const response = await fetch('http://localhost:3000/api/post');
-//   const data = await response.json();
-
-//   return {
-//     props: { data: data }, // will be passed to the page component as props
-//   };
-// };
-
-// export async function getStaticProps(context) {
-//   const response = await fetch('/api/post');
-//   // const data = await response.json();
-
-//   return {
-//     props: { data: 'shindo' }, // will be passed to the page component as props
-//   };
-// }
-
 export async function getServerSideProps(context) {
-  const res = await fetch('http://localhost:3000/api/post');
+  const res = await fetch('https://evening-harbor-03068.herokuapp.com/');
   const data = await res.json();
+
   return {
     props: { data }, // will be passed to the page component as props
   };

@@ -1,76 +1,69 @@
 {
-  "data": [
-    {
+  "data": [{
       "category": "tài liệu tự học",
       "tag": "tailieutuhoc",
-      "links": [
-        {
+      "links": [{
           "name": "hóa học 8",
-          "url": "/hoahoc8",
-          "childrens": [
-            {
+          "url": "chem8",
+          "childrens": [{
               "name": "học kì 1",
-              "url": "/hoahoc8/hocki1"
+              "url": "chem8/1"
             },
             {
               "name": "học kì 2",
-              "url": "/hoahoc8/hocki2"
+              "url": "chem8/2"
             }
           ]
         },
         {
           "name": "hóa học 9",
-          "url": "/hoahoc9",
-          "childrens": [
-            {
+          "url": "chem9",
+          "childrens": [{
               "name": "học kì 1",
-              "url": "/hoahoc9/hocki1"
+              "url": "chem9/1"
             },
             {
               "name": "học kì 2",
-              "url": "/hoahoc9/hocki2"
+              "url": "chem9/2"
             }
           ]
         },
         {
           "name": "hóa học 10",
-          "url": "/hoahoc10",
-          "childrens": [
-            {
+          "url": "chem10",
+          "childrens": [{
               "name": "học kì 1",
-              "url": "/hoahoc10/hocki1"
+              "url": "chem10/1"
             },
             {
               "name": "học kì 2",
-              "url": "/hoahoc10/hocki2"
+              "url": "chem10/2"
             }
           ]
         },
         {
           "name": "hóa học 11",
-          "url": "/hoahoc11",
-          "childrens": [
-            {
+          "url": "chem11",
+          "childrens": [{
               "name": "học kì 1",
-              "url": "/hoahoc11/hocki1"
+              "url": "chem11/1"
             },
             {
               "name": "học kì 2",
-              "url": "/hoahoc11/hocki2"
+              "url": "chem11/2"
             }
           ]
         },
         {
           "name": "hóa học 12",
-          "url": "/hoahoc12",
-          "childrens": [
-            {
+          "url": "chem12",
+          "childrens": [{
               "name": "học kì 1",
-              "url": "/hoahoc12/hocki1"
+              "url": "chem12/1"
             },
             {
               "name": "học kì 2",
-              "url": "/hoahoc12/hocki2"
+              "url": "chem12/2"
             }
           ]
         }
@@ -79,32 +72,27 @@
     {
       "category": "luyện thi đại học",
       "tag": "luyenthidaihoc",
-      "links": [
-        {
-          "name": "đề thi thử 2020",
-          "url": "/thithu2020"
-        }
-      ]
+      "links": [{
+        "name": "đề thi thử 2020",
+        "url": "/thithu2020"
+      }]
     },
     {
       "category": "đề ôn tập",
       "tag": "deontap",
-      "links": [
-        {
-          "name": "hóa học 8",
-          "url": "/hoahoc8/dekiemtra",
-          "childrens": [
-            {
-              "name": "học kì 1",
-              "url": "/hoahoc8/dekiemtra/hocki1"
-            },
-            {
-              "name": "học kì 2",
-              "url": "/hoahoc8/dekiemtra/hocki2"
-            }
-          ]
-        }
-      ]
+      "links": [{
+        "name": "hóa học 8",
+        "url": "/chem8/exams",
+        "childrens": [{
+            "name": "học kì 1",
+            "url": "/chem8/exams/1"
+          },
+          {
+            "name": "học kì 2",
+            "url": "/chem8/exams/2"
+          }
+        ]
+      }]
     }
   ]
 }

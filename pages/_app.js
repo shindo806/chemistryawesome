@@ -7,6 +7,7 @@ import '../css/sidebar.css';
 import '../css/mainwindow.css';
 import '../css/table.css';
 import '../css/chapter.css';
+import '../css/welcomewindow.css'
 
 export default function MyApp({
   Component,
