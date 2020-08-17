@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import { Icon } from 'semantic-ui-react';
 
@@ -43,13 +42,13 @@ function MenuLink(props) {
           className={
             activeUrl === link.url
               ? 'menu-link open-submenu'
-              : isSubMenuOpen === link.url
-              ? 'menu-link open-submenu'
-              : 'menu-link'
+              : // : isSubMenuOpen === link.url
+                // ? 'menu-link open-submenu'
+                'menu-link'
           }
           key={link.url}
-          onMouseEnter={() => setIsSubMenuOpen(link.url)}
-          onMouseLeave={() => setIsSubMenuOpen(false)}
+          // onMouseEnter={() => setIsSubMenuOpen(link.url)}
+          // onMouseLeave={() => setIsSubMenuOpen(false)}
         >
           <Link href='/[link.url]' as={`/${link.url}`}>
             <a
@@ -73,16 +72,18 @@ function MenuLink(props) {
                     as={`/${children.url}`}
                     key={children.url}
                   >
-                    <a
-                      onClick={(e) => hadleSubLinkClick(e, children.url)}
-                      className={
-                        subMenuActive === children.url
-                          ? 'submenu-highlight'
-                          : null
-                      }
-                    >
-                      {children.name}
-                    </a>
+                    <li>
+                      <a
+                        onClick={(e) => hadleSubLinkClick(e, children.url)}
+                        className={
+                          subMenuActive === children.url
+                            ? 'submenu-highlight'
+                            : null
+                        }
+                      >
+                        {children.name}
+                      </a>
+                    </li>
                   </Link>
                 ))
               : null}
