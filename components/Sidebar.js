@@ -40,7 +40,7 @@ function MenuLink(props) {
       <h3 className='menu-title'> {item.category} </h3>
       {item.links.map((link) => (
         <li className='menu-link' key={link.url}>
-          <Link href={`/${link.url}`}>
+          <Link href='/[link.url]' as={`/${link.url}`}>
             <a
               onClick={(e) => handleClick(e, link.url)}
               className={activeUrl === link.url ? 'highlight-menu' : null}
@@ -60,7 +60,11 @@ function MenuLink(props) {
           >
             {link.childrens
               ? link.childrens.map((children) => (
-                  <Link href={`/${children.url}`} key={children.url}>
+                  <Link
+                    href={`[link.url]/[children.url]`}
+                    as={`${children.url}`}
+                    key={children.url}
+                  >
                     <a
                       onClick={(e) => hadleSubLinkClick(e, children.url)}
                       className={

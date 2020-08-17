@@ -42,7 +42,7 @@ export async function getStaticPaths() {
         },
       },
     ],
-    fallback: false, // See the "fallback" section below
+    fallback: false,
   };
 }
 
@@ -58,7 +58,7 @@ export async function getStaticProps(context) {
       props: {
         data: data.data,
         params,
-      }, // will be passed to the page component as props
+      },
     };
   }
 }
