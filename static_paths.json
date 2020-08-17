@@ -1,0 +1,76 @@
+[{
+  "params": {
+    "chemgrade": "chem8",
+    "semester": "1"
+  }
+}, {
+  "params": {
+    "chemgrade": "chem8",
+    "semester": "2"
+  }
+}, {
+  "params": {
+    "chemgrade": "chem8",
+    "semester": "all-semester"
+  }
+}, {
+  "params": {
+    "chemgrade": "chem9",
+    "semester": "1"
+  }
+}, {
+  "params": {
+    "chemgrade": "chem9",
+    "semester": "2"
+  }
+}, {
+  "params": {
+    "chemgrade": "chem9",
+    "semester": "all-semester"
+  }
+}, {
+  "params": {
+    "chemgrade": "chem10",
+    "semester": "1"
+  }
+}, {
+  "params": {
+    "chemgrade": "chem10",
+    "semester": "2"
+  }
+}, {
+  "params": {
+    "chemgrade": "chem10",
+    "semester": "all-semester"
+  }
+}, {
+  "params": {
+    "chemgrade": "chem11",
+    "semester": "1"
+  }
+}, {
+  "params": {
+    "chemgrade": "chem11",
+    "semester": "2"
+  }
+}, {
+  "params": {
+    "chemgrade": "chem11",
+    "semester": "all-semester"
+  }
+}, {
+  "params": {
+    "chemgrade": "chem12",
+    "semester": "1"
+  }
+}, {
+  "params": {
+    "chemgrade": "chem12",
+    "semester": "2"
+  }
+}, {
+  "params": {
+    "chemgrade": "chem12",
+    "semester": "all-semester"
+  }
+}]

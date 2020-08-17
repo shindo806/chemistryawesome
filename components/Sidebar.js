@@ -11,9 +11,9 @@ function MenuLink(props) {
   const { data } = menuItems;
   const [activeUrl, setActiveUrl] = useState(-1);
   const [subMenuActive, setSubMenuActive] = useState(-1);
+  const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 
   useEffect(() => {
-    console.log(props);
     if (props.params) {
       setActiveUrl(props.params.chemgrade);
       if (props.params.semester) {
@@ -39,7 +39,18 @@ function MenuLink(props) {
     <ul className='mainmenu' key={item.tag}>
       <h3 className='menu-title'> {item.category} </h3>
       {item.links.map((link) => (
-        <li className='menu-link' key={link.url}>
+        <li
+          className={
+            activeUrl === link.url
+              ? 'menu-link open-submenu'
+              : isSubMenuOpen === link.url
+              ? 'menu-link open-submenu'
+              : 'menu-link'
+          }
+          key={link.url}
+          onMouseEnter={() => setIsSubMenuOpen(link.url)}
+          onMouseLeave={() => setIsSubMenuOpen(false)}
+        >
           <Link href='/[link.url]' as={`/${link.url}`}>
             <a
               onClick={(e) => handleClick(e, link.url)}
@@ -47,16 +58,13 @@ function MenuLink(props) {
             >
               <EclenLogo className={'link-icon'} />
               <span>{link.name}</span>
-              {activeUrl !== link.url ? (
-                <Icon name='chevron down' className='dropdown-icon' />
-              ) : null}
+              <Icon name='chevron down' className='dropdown-icon' />
             </a>
           </Link>
           {/* Submenu */}
           <ul
-            className={
-              activeUrl === link.url ? 'submenu show-submenu' : 'submenu'
-            }
+            // className={activeUrl === link.url ? 'submenu' : 'submenu'}
+            className='submenu'
           >
             {link.childrens
               ? link.childrens.map((children) => (

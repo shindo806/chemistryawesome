@@ -4,6 +4,9 @@ import { Grid } from 'semantic-ui-react';
 import SidebarComponent from '../../components/Sidebar';
 import MainWindow from '../../components/Mainwindow';
 
+// Static path JSON file
+import staticPathJSON from '../../static_paths.json';
+
 const Semester = ({ params, data }) => {
   return (
     <>
@@ -26,44 +29,7 @@ const Semester = ({ params, data }) => {
 // Provide dynamic paths then use getStaticProps to fetch data
 export async function getStaticPaths() {
   return {
-    paths: [
-      {
-        params: {
-          chemgrade: 'chem10',
-          semester: '1',
-        },
-      },
-      {
-        params: {
-          chemgrade: 'chem10',
-          semester: '2',
-        },
-      },
-      {
-        params: {
-          chemgrade: 'chem11',
-          semester: '1',
-        },
-      },
-      {
-        params: {
-          chemgrade: 'chem11',
-          semester: '2',
-        },
-      },
-      {
-        params: {
-          chemgrade: 'chem12',
-          semester: '1',
-        },
-      },
-      {
-        params: {
-          chemgrade: 'chem12',
-          semester: '2',
-        },
-      },
-    ],
+    paths: staticPathJSON,
     fallback: false, // See the "fallback" section below
   };
 }

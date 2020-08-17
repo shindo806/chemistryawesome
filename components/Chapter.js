@@ -57,6 +57,7 @@ const Chapter = (props) => {
                       href={file.webContentLink}
                       title='PDF'
                       className='download-button'
+                      target='_blank'
                     >
                       <span className='filetype-logo'>
                         <svg
@@ -73,7 +74,12 @@ const Chapter = (props) => {
                         </svg>
                       </span>
                     </a>{' '}
-                    <a href='/' title='Word' className='download-button'>
+                    <a
+                      href='/'
+                      title='Word'
+                      className='download-button'
+                      target='_blank'
+                    >
                       <span className='filetype-logo'>
                         <svg
                           aria-hidden='true'

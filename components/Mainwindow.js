@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Semaster from './Semaster';
+import Semester from './Semester';
 import Chapter from './Chapter';
 import Powerpoint from './Powerpoint';
 
@@ -41,7 +41,7 @@ const MainWindow = ({ ...props }) => {
             {activeIndex === 0 ? (
               <Chapter data={props.data} />
             ) : activeIndex === 1 ? (
-              <Semaster />
+              <Semester data={props.data} />
             ) : (
               <Powerpoint />
             )}

@@ -1,15 +1,4 @@
-import { Table } from 'semantic-ui-react';
-import { useState } from 'react';
-
-const Semaster = (props) => {
-  // const renderLink = (
-  //   <iframe
-  //     src='https://drive.google.com/file/d/1sNH4Pu8F-L9FcQKxAn96IatNr_rrx8Fn/preview'
-  //     width='640'
-  //     height='480'
-  //   ></iframe>
-  // );
-
+const Semester = (props) => {
   return (
     <>
       <table className='custom-table'>
@@ -46,4 +35,9 @@ const Semaster = (props) => {
   );
 };
 
-export default Semaster;
+export async function getInitialProps(context) {
+  const path = context.asPath;
+  console.log(path);
+}
+
+export default Semester;
