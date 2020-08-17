@@ -61,8 +61,8 @@ function MenuLink(props) {
             {link.childrens
               ? link.childrens.map((children) => (
                   <Link
-                    href={`/[children.url]`}
-                    as={`${children.url}`}
+                    href={`/[link.url]/[children.url]`}
+                    as={`/${children.url}`}
                     key={children.url}
                   >
                     <a
