@@ -8,6 +8,7 @@ import '../css/mainwindow.css';
 import '../css/table.css';
 import '../css/chapter.css';
 import '../css/welcomewindow.css'
+import '../css/modal.css'
 
 export default function MyApp({
   Component,

@@ -3,12 +3,15 @@ import { useState } from 'react';
 import CustomModal from './Modal';
 
 const Chapter = (props) => {
-  const files = props.data;
-  console.log(files);
   const [previewLink, setPreviewLink] = useState('');
+  let files = props.data;
+  files = files.filter((file) => file.name.includes('.docx'));
+  console.log(previewLink);
   const handlePreview = (link) => {
+    console.log('set the link preview');
     setPreviewLink(link);
   };
+
   return (
     <div className='wrap-table'>
       <div className='table fixed-header'>
@@ -24,7 +27,9 @@ const Chapter = (props) => {
             </thead>
           </table>
         </div>
-        <CustomModal link={previewLink} />
+        {/* Preview Modal */}
+        <CustomModal link={previewLink} handlePreview={handlePreview} />
+
         <div className='table-body js-pscroll'>
           <table>
             <tbody>
@@ -37,7 +42,7 @@ const Chapter = (props) => {
                 >
                   <td className='cell small-cell align-center'>{index + 1}</td>
                   <td className='cell large-cell align-left'>
-                    {file.name.split(/\.pdf/)[0]}
+                    {file.name.split(/(.docx)|(.pdf)/g)[0]}
                   </td>
                   <td className='cell small-cell align-center'>
                     <a
@@ -53,7 +58,6 @@ const Chapter = (props) => {
                       title='PDF'
                       className='download-button'
                     >
-                      {/* <span>PDF</span> */}
                       <span className='filetype-logo'>
                         <svg
                           aria-hidden='true'
@@ -70,7 +74,6 @@ const Chapter = (props) => {
                       </span>
                     </a>{' '}
                     <a href='/' title='Word' className='download-button'>
-                      {/* <span>Word</span> */}
                       <span className='filetype-logo'>
                         <svg
                           aria-hidden='true'

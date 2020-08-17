@@ -4,27 +4,41 @@ import { useEffect } from 'react';
 function exampleReducer(state, action) {
   switch (action.type) {
     case 'CONFIG_CLOSE_ON_DIMMER_CLICK':
-      return { ...state, closeOnDimmerClick: action.value };
+      return {
+        ...state,
+        closeOnDimmerClick: action.value,
+      };
     case 'CONFIG_CLOSE_ON_ESCAPE':
-      return { ...state, closeOnEscape: action.value };
+      return {
+        ...state,
+        closeOnEscape: action.value,
+      };
     case 'OPEN_MODAL':
-      return { ...state, open: true };
+      return {
+        ...state,
+        open: true,
+      };
     case 'CLOSE_MODAL':
-      return { ...state, open: false };
+      return {
+        ...state,
+        open: false,
+      };
     default:
       throw new Error();
   }
 }
 const Preview = function (props) {
   const link = props.link.split('view')[0] + 'preview';
-  return <iframe src={link} width='640' height='480'></iframe>;
-  // const renderLink = (
-  //   <iframe
-  //     src='https://drive.google.com/file/d/1sNH4Pu8F-L9FcQKxAn96IatNr_rrx8Fn/preview'
-  //     width='640'
-  //     height='480'
-  //   ></iframe>
-  // );
+  return (
+    <iframe
+      src={link}
+      width='800'
+      height='600'
+      style={{ margin: '1rem auto', display: 'inherit' }}
+    >
+      {' '}
+    </iframe>
+  );
 };
 
 function CustomModal(props) {
@@ -35,11 +49,22 @@ function CustomModal(props) {
     dimmer: undefined,
   });
   const { open, closeOnEscape, closeOnDimmerClick } = state;
+
   useEffect(() => {
     if (props.link !== '') {
-      dispatch({ type: 'OPEN_MODAL' });
+      dispatch({
+        type: 'OPEN_MODAL',
+      });
     }
   }, [props.link]);
+
+  const handleOnClose = () => {
+    dispatch({
+      type: 'CLOSE_MODAL',
+    });
+    props.handlePreview('');
+  };
+
   return (
     <Grid columns={1}>
       <Grid.Column>
@@ -47,14 +72,10 @@ function CustomModal(props) {
           closeOnEscape={closeOnEscape}
           closeOnDimmerClick={closeOnDimmerClick}
           open={open}
-          onOpen={() => dispatch({ type: 'OPEN_MODAL' })}
-          onClose={() => dispatch({ type: 'CLOSE_MODAL' })}
+          onClose={() => handleOnClose()}
         >
           <Modal.Actions>
-            <Button
-              onClick={() => dispatch({ type: 'CLOSE_MODAL' })}
-              color='teal'
-            >
+            <Button className='modal-button' onClick={() => handleOnClose()}>
               x
             </Button>
           </Modal.Actions>

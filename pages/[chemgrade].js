@@ -1,5 +1,4 @@
 import fetch from 'isomorphic-unfetch';
-import { useRouter } from 'next/router';
 import Navbar from '../components/Navbar';
 import { Grid } from 'semantic-ui-react';
 import SidebarComponent from '../components/Sidebar';
@@ -8,16 +7,17 @@ import MainWindow from '../components/Mainwindow';
 export default function Chemgrade({ data, params }) {
   return (
     <>
-      {' '}
-      {/* Header */} <Navbar /> {/* Main */}{' '}
+      {/* Header */}
+      <Navbar />
+      {/* Main */}
       <Grid>
         <Grid.Column width={3} className='sidebar'>
           <SidebarComponent params={params} />
-        </Grid.Column>{' '}
+        </Grid.Column>
         <Grid.Column width={13} className='main-container'>
-          <MainWindow data={data.allFilesInChapter} />{' '}
-        </Grid.Column>{' '}
-      </Grid>{' '}
+          <MainWindow data={data} />
+        </Grid.Column>
+      </Grid>
     </>
   );
 }
@@ -56,7 +56,7 @@ export async function getStaticProps(context) {
     const data = await res.json();
     return {
       props: {
-        data,
+        data: data.data,
         params,
       }, // will be passed to the page component as props
     };
