@@ -3,7 +3,7 @@ import fetch from 'isomorphic-unfetch';
 import { Grid } from 'semantic-ui-react';
 
 import Navbar from '../components/Navbar';
-import SidebarComponent from '../components/Sidebar';
+import SidebarComponent from '../components/Sidebar/Sidebar';
 import MainWindow from '../components/Mainwindow';
 import WelcomeWindow from '../components/WelcomeWindow';
 

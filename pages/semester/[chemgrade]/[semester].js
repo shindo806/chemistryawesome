@@ -1,11 +1,12 @@
 import fetch from 'isomorphic-unfetch';
-import Navbar from '../../components/Navbar';
+
 import { Grid } from 'semantic-ui-react';
-import SidebarComponent from '../../components/Sidebar/Sidebar';
-import MainWindow from '../../components/Mainwindow';
+import Navbar from '../../../components/Navbar';
+import SidebarComponent from '../../../components/Sidebar/Sidebar';
+import MainWindow from '../../../components/Mainwindow';
 
 // Static path JSON file
-import staticPathJSON from '../../static_paths.json';
+import staticPathJSON from '../../../static_paths.json';
 
 const Semester = ({ params, data }) => {
   return (

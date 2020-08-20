@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-unfetch';
 import Navbar from '../components/Navbar';
 import { Grid } from 'semantic-ui-react';
-import SidebarComponent from '../components/Sidebar';
+import SidebarComponent from '../components/Sidebar/Sidebar';
 import MainWindow from '../components/Mainwindow';
 
 export default function Chemgrade({ data, params }) {
@@ -51,7 +51,7 @@ export async function getStaticProps(context) {
   const chemgrade = context.params.chemgrade ? context.params.chemgrade : null;
   if (chemgrade) {
     const res = await fetch(
-      `https://evening-harbor-03068.herokuapp.com/${chemgrade}`
+      `https://evening-harbor-03068.herokuapp.com/chapter/${chemgrade}`
     );
     const data = await res.json();
     return {
