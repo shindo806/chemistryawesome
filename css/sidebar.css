@@ -2,7 +2,6 @@
   width: 320px;
   height: 100vh;
   margin: 0 auto;
-
 }
 
 /* define a fixed width for the entire menu */
@@ -41,7 +40,6 @@
   padding: 10px;
   color: #000;
   text-transform: capitalize;
-
 }
 
 .menu-link a {
@@ -49,7 +47,7 @@
 }
 
 /* add hover behaviour */
-.mainmenu>li>a:hover {
+.mainmenu > li > a:hover {
   background-color: #1ab188;
   color: #ffffff;
   transition: all 200ms ease-in-out;
@@ -64,7 +62,7 @@
   fill: #ffffff;
 }
 
-.mainmenu>li>a:hover .link-icon {
+.mainmenu > li > a:hover .link-icon {
   fill: #ffffff;
   transition: all 100ms ease-in-out;
 }
@@ -93,7 +91,7 @@
   position: relative;
 }
 
-.highlight-menu>svg {
+.highlight-menu > svg {
   fill: #ffffff;
 }
 
@@ -107,10 +105,10 @@ i.icon.dropdown-icon {
 /* Rotate 180deg when parent element had .open-submenu class */
 .menu-link:hover i.icon.dropdown-icon {
   transform: rotate(180deg);
-  transition: all 400ms ease-in-out;
+  transition: transform 400ms ease-in-out;
 }
 
-.open-submenu>.highlight-menu>i.icon.dropdown-icon {
+.open-submenu > .highlight-menu > i.icon.dropdown-icon {
   transform: rotate(180deg);
 }
 
@@ -122,9 +120,9 @@ i.icon.dropdown-icon {
   position: relative;
 }
 
-.submenu>li::after {
+.submenu > li::after {
   position: absolute;
-  content: "";
+  content: '';
   bottom: 0;
   left: 0;
   z-index: 1;
@@ -144,22 +142,13 @@ i.icon.dropdown-icon {
   position: relative;
 }
 
-
 .submenu li:hover::after {
   width: 100%;
 }
 
-.submenu li:hover>a {
+.submenu li:hover > a {
   color: #1ab188;
 }
-
-
-
-/* hover behaviour for links inside .submenu */
-/* .submenu li:hover a {
-  background-color: #1ab188;
-  color: #ffffff;
-} */
 
 /* this is the initial state of all submenus.
   we set it to max-height: 0, and hide the overflowed content.
@@ -170,16 +159,10 @@ i.icon.dropdown-icon {
   transition: all 0.5s ease-out;
 }
 
-/* .submenu-highlight {
+.submenu-highlight {
   color: #1ab188 !important;
   font-weight: bold;
-} */
-
-/* .submenu-highlight:hover {
-  background-color: #1ab188 !important;
-  color: #ffffff !important;
-  transition: all 200ms ease-in-out;
-} */
+}
 
 /* SVG icon */
 .link-icon {

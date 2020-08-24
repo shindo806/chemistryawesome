@@ -2,7 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 
 export default function SubMenu(props) {
-  const { link, subMenuActive, activeUrl } = props;
+  const { link, activeUrl, queryObject } = props;
+  const subMenuActive = `${queryObject.chemgrade}/${queryObject.semester}`;
   return (
     <ul
       className={activeUrl === link.url ? 'submenu' : 'submenu'}

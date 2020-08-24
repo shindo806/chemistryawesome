@@ -5,8 +5,9 @@ import { Icon } from 'semantic-ui-react';
 import SubMenu from '../SubMenu';
 
 export default function MainMenu(props) {
-  const { item, activeUrl, subMenuActive } = props;
-
+  const { item, subMenuActive, queryObject } = props;
+  const activeUrl = queryObject.chemgrade;
+  // link.url = chem8 - chem9 - chem10 ...
   return (
     <ul className='mainmenu' key={item.tag}>
       <h3 className='menu-title'> {item.category} </h3>
@@ -18,13 +19,17 @@ export default function MainMenu(props) {
           key={link.url}
         >
           <Link href='/[link.url]' as={`/${link.url}`}>
-            <a
-              // onClick={(e) => handleClick(e, link.url)}
-              className={activeUrl === link.url ? 'highlight-menu' : null}
-            >
+            <a className={activeUrl === link.url ? 'highlight-menu' : null}>
               <EclenLogo className={'link-icon'} />
               <span>{link.name}</span>
-              <Icon name='chevron down' className='dropdown-icon' />
+              <Icon
+                name='chevron down'
+                className='dropdown-icon'
+                onClick={(e) => {
+                  e.preventDefault();
+                  console.log('click');
+                }}
+              />
             </a>
           </Link>
           {/* Submenu */}
@@ -32,6 +37,7 @@ export default function MainMenu(props) {
             link={link}
             subMenuActive={subMenuActive}
             activeUrl={activeUrl}
+            queryObject={queryObject}
           />
         </li>
       ))}

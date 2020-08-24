@@ -1,11 +1,10 @@
-import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { Icon } from 'semantic-ui-react';
-
+import { useRouter } from 'next/router';
 import menuItems from '../../menuItems.json';
 import MainMenu from './MainMenu';
 // utils stuff goes here
 function MenuLink(props) {
+  const query = useRouter().query;
   const { data } = menuItems;
 
   const [activeUrl, setActiveUrl] = useState(-1);
@@ -28,6 +27,7 @@ function MenuLink(props) {
           key={item.category}
           item={item}
           activeUrl={activeUrl}
+          queryObject={query}
           subMenuActive={subMenuActive}
         />
       ))}
